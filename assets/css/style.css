@@ -446,7 +446,7 @@ sup {
 }
 
 .search-wrapper > .m-icon {
-  display: block;
+  display: none;
 }
 
 .search-wrapper .icon-btn {
@@ -602,12 +602,12 @@ article.container::before {
   font-size: 3.2rem;
 }
 
-.highlights-list {
+.highlight-list {
   display: grid;
   gap: 20px;
 }
 
-.highlights-list .title-3 {
+.highlight-list .title-3 {
   color: var(--on-surface-variant);
   margin-block-end: 20px;
 }
@@ -672,6 +672,16 @@ article.container::before {
 .badge.aqi-5 {
   background-color: var(--bg-aqi-5);
   color: var(--on-bg-aqi-5);
+}
+
+.highlight-card.two .card-item {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.highlight-card.two .label-1 {
+  margin-block-end: 4px;
 }
 /*-----------------------------------*\
   #FORECAST
@@ -981,7 +991,7 @@ article.container::before {
     border-block-end: none;
   }
 
-  .search-wrapper > .m.icon {
+  .search-wrapper > .m-icon {
     display: block;
   }
 
@@ -1069,7 +1079,7 @@ article.container::before {
     font-size: 4.8rem;
   }
 
-  .slider-list{
+  .slider-list {
     gap: 16px;
   }
 }
@@ -1077,5 +1087,7 @@ article.container::before {
 /* SCREEN LARGER THAN 1400px SCREEN */
 
 @media (min-width: 1400px) {
-  
+  .highlight-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

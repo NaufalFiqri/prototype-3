@@ -678,7 +678,7 @@ article.container::before {
 
 .slider-container {
   overflow-x: auto;
-  max-inline: -16px;
+  margin-inline: -16px;
 }
 
 .slider-container::-webkit-scrollbar {

@@ -746,7 +746,7 @@ article.container::before {
   #LOADING
 \*-----------------------------------*/
 
-.loading{
+.loading {
   position: absolute;
   top: 0;
   left: 0;
@@ -758,7 +758,7 @@ article.container::before {
   display: none;
 }
 
-.loading::before{
+.loading::before {
   content: "";
   width: 48px;
   height: 48px;
@@ -772,6 +772,27 @@ article.container::before {
   #ERROR SECTION
 \*-----------------------------------*/
 
+.error-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  z-index: 8;
+}
+
+.error-content .btn-primary {
+  margin-block-start: 20px;
+}
+
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+

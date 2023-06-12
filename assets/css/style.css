@@ -621,18 +621,18 @@ article.container::before {
   align-items: center;
 }
 
-.highlight-card .wrapper{
+.highlight-card .wrapper {
   justify-content: space-between;
   gap: 16px;
 }
 
-.highlight-card .card-list{
+.highlight-card .card-list {
   flex-wrap: wrap;
   flex-grow: 1;
   row-gap: 8px;
 }
 
-.highlight-card .card-item{
+.highlight-card .card-item {
   width: 50%;
   justify-content: flex-end;
   gap: 4px;
@@ -642,7 +642,7 @@ article.container::before {
   color: var(--on-surface-variant);
 }
 
-.badge{
+.badge {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -652,23 +652,23 @@ article.container::before {
   cursor: help;
 }
 
-.badge.aqi-1{
+.badge.aqi-1 {
   background-color: var(--bg-aqi-1);
   color: var(--on-bg-aqi-1);
 }
-.badge.aqi-2{
+.badge.aqi-2 {
   background-color: var(--bg-aqi-2);
   color: var(--on-bg-aqi-2);
 }
-.badge.aqi-3{
+.badge.aqi-3 {
   background-color: var(--bg-aqi-3);
   color: var(--on-bg-aqi-3);
 }
-.badge.aqi-4{
+.badge.aqi-4 {
   background-color: var(--bg-aqi-4);
   color: var(--on-bg-aqi-4);
 }
-.badge.aqi-5{
+.badge.aqi-5 {
   background-color: var(--bg-aqi-5);
   color: var(--on-bg-aqi-5);
 }
@@ -676,6 +676,43 @@ article.container::before {
   #FORECAST
 \*-----------------------------------*/
 
+.slider-container {
+  overflow-x: auto;
+  max-inline: -16px;
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-list {
+  display: flex;
+  gap: 12px;
+}
+
+.slider-list:first-child {
+  margin-block-end: 16px;
+}
+
+.slider-list::before,
+.slider-list::after {
+  content: "";
+  min-width: 4px;
+}
+
+.slider-item {
+  min-width: 110px;
+  flex: 1 1 100%;
+}
+
+.slider-card {
+  text-align: center;
+}
+
+.slider-item .weather-icon {
+  margin-inline: auto;
+  margin-block: 12px;
+}
 /*-----------------------------------*\
   #LOADING
 \*-----------------------------------*/

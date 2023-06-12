@@ -1073,3 +1073,9 @@ article.container::before {
     gap: 16px;
   }
 }
+
+/* SCREEN LARGER THAN 1400px SCREEN */
+
+@media (min-width: 1400px) {
+  
+}

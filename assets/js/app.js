@@ -97,6 +97,7 @@ const loading = document.querySelector("[data-loading]");
 const currentLocationBtn = document.querySelector(
   "[data-current-location-btn]"
 );
+const errorContent = document.querySelector("[data-error-content]");
 
 /**
  * Render all weather data in html page
@@ -105,10 +106,9 @@ const currentLocationBtn = document.querySelector(
  */
 
 export const updateWeather = function (lat, lon) {
-  // loading.style.display = "grid";
+//   loading.style.display = "grid";
   container.style.overflowY = "hidden";
-  container.classList.contains("fade-in") ??
-    container.classList.remove("fade-in");
+  container.classList.remove("fade-in");
   errorContent.style.display = "none";
 
   const currentWeatherSection = document.querySelector(
@@ -143,6 +143,47 @@ export const updateWeather = function (lat, lon) {
       timezone,
     } = currentWeather;
     const [{ description, icon }] = weather;
+
+    const card = document.createElement("div");
+    card.classList.add("add", "card-lg", "current-weather-card");
+
+    card.innerHTML = `
+      <h2 class="title-2 card-title">Now</h2>
+
+      <div class="weapper">
+        <p class="heading">${parseInt(temp)}&deg;<sup>c</sup></p>
+
+        <img src="./assets/images/weather_icons/${icon}.png" width="64" height="64" alt="${description}"
+          class="weather-icon">
+      </div>
+
+      <p class="body-3">${description}</p>
+
+      <ul class="meta-list">
+
+        <li class="meta-item">
+          <span class="m-icon">calendar_today</span>
+
+          <p class="title-3 meta-text">${module.getDate(dateUnix, timezone)}</p>
+        </li>
+
+        <li class="meta-item">
+          <span class="m-icon">location_on</span>
+
+          <p class="title-3 meta-text" data-location></p>
+        </li>
+
+      </ul>
+    `;
+
+    fetchData(url.reverseGeo(lat, lon), function ([{ name, country }]) {
+      card.querySelector("[data-location]").innerHTML = `${name}, ${country}`;
+    });
+    currentWeatherSection.appendChild(card);
+
+    /** 
+     * TODAY'S HIGHLIGHTS
+     */
   });
 };
 

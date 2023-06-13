@@ -6,7 +6,7 @@
 
 "use strict";
 import { updateWeather, error404 } from "./app.js";
-const defaultLocation = "#/weather?lat=51.5073219&lon=-0.1276474"; // London
+const defaultLocation = "#/weather?lat=2.200844&lon=102.240143"; // Melaka
 
 const currentLocation = function () {
   window.navigator.geolocation.getCurrentPosition(

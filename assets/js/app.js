@@ -82,6 +82,11 @@ searchField.addEventListener("input", function () {
             .appendChild(searchItem);
           items.push(searchItem.querySelector("[data-search-toggler]"));
         }
+
+        addEventOnElements(items, "click", function () {
+          toggleSearch();
+          searchResult.classList.remove("active");
+        });
       });
     }, searchTimeoutDuration);
   }
@@ -100,7 +105,7 @@ const errorContent = document.querySelector("[data-error-content]");
  * @param {number} lon longitude
  */
 export const updateWeather = function (lat, lon) {
-  loading.style.display = "grid";
+//   loading.style.display = "grid";
   container.style.overflowY = "hidden";
   container.classList.contains("fade-in") ??
     container.classList.remove("fade-in");

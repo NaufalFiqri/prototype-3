@@ -40,7 +40,7 @@ const checkHash = function () {
     ? requestURL.split("?")
     : [requestURL];
 
-  routes.get(route) ? route.get(route)(query) : error404();
+  routes.get(route) ? routes.get(route)(query) : error404();
 };
 
 window.addEventListener("hashchange", checkHash);

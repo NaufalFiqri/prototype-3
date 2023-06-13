@@ -1008,12 +1008,11 @@ article.container::before {
     display: none;
   }
 
-  .search-view:focus-within .search-field.search-view.active {
+  .search-view:focus-within .search-result.active {
     display: block;
   }
 
-  .search-view:has(.search-result.active):focus-within,
-  .search-field {
+  .search-view:has(.search-result.active):focus-within .search-field {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
@@ -1026,7 +1025,7 @@ article.container::before {
     max-height: 360px;
     border-radius: 0 0 var(--radius-28) var(--radius-28);
     border-block-start: 1px solid var(--outline);
-    overflow-y: auto; /* for firefox*/
+    overflow-y: auto; /* for firefox */
     overflow-y: overlay;
   }
 

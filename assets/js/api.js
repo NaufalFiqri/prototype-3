@@ -15,7 +15,8 @@ const api_key = "7d972b28fc95af77fe1871b15c651a67";
  */
 
 export const fetchData = function (URL, callback) {
-  fetch(`${URL}&appid=${api_key}`)
+  const secureURL = URL.replace("http://", "https://");
+  fetch(`${secureURL}&appid=${api_key}`)
     .then((res) => res.json())
     .then((data) => callback(data));
 };

@@ -80,7 +80,7 @@ searchField.addEventListener("input", function () {
           searchResult
             .querySelector("[data-search-list]")
             .appendChild(searchItem);
-          items.push(searchItem.querySelector("data-search-toggler"));
+          items.push(searchItem.querySelector("[data-search-toggler]"));
         }
       });
     }, searchTimeoutDuration);

@@ -106,7 +106,7 @@ const errorContent = document.querySelector("[data-error-content]");
  */
 
 export const updateWeather = function (lat, lon) {
-  // loading.style.display = "grid";
+//   loading.style.display = "grid";
   container.style.overflowY = "hidden";
   container.classList.remove("fade-in");
   errorContent.style.display = "none";
@@ -402,7 +402,16 @@ export const updateWeather = function (lat, lon) {
         hourlySection.querySelector("[data-wind]").appendChild(windLi);
       }
 
-      
+      /**
+       * 5 DAY FORECAST SECTION
+       */
+      forecastSection.innerHTML = `
+        <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
+
+        <div class="card card-lg forecast-card">
+          <ul data-forecast-list></ul>
+        </div>
+      `;
     });
   });
 };

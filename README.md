@@ -1,7 +1,7 @@
 
 # Project Title
 
-A brief description of what this project does and who it's for
+Skysavvy is an innovative weather forecasting website designed to provide users with comprehensive and accurate weather information. With a user-friendly interface and advanced features, Skysavvy aims to deliver a seamless and intuitive experience for individuals seeking up-to-date weather forecasts and related data.
 
 ## Tech Stack
 
@@ -9,17 +9,17 @@ A brief description of what this project does and who it's for
 
 ## Demo
 
-Insert gif or link to demo
+https://sky-savvy.netlify.app
 
 ## Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Accurate and up-to-date weather information.
+- Interactive and user-friendly interface.
+- Additional weather-related content and features.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./assets/images/Screenshot_93.png)
 
 ## Run Locally
 

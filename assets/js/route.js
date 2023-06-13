@@ -6,7 +6,7 @@
 
 "use strict";
 import { updateWeather, error404 } from "./app.js";
-const defaultLocation = "#/weather?lat=2.200844&lon=102.240143"; // Melaka
+const defaultLocation = "#/weather?lat=51.5073219&lon=-0.1276474"; // London
 
 const currentLocation = function () {
   window.navigator.geolocation.getCurrentPosition(
@@ -26,7 +26,7 @@ const currentLocation = function () {
  * @param {string} query Searched query
  */
 const searchedLocation = (query) => updateWeather(...query.split("&"));
-// updateWeather("lat=2.200844", "lon=102.240143")
+// updateWeather("lat=51.5073219", "lon=-0.1276474")
 
 const routes = new Map([
   ["/current-location", currentLocation],

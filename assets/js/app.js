@@ -123,7 +123,7 @@ export const updateWeather = function (lat, lon) {
   hourlySection.innerHTML = "";
   forecastSection.innerHTML = "";
 
-  if (window.location.hash === "#/current-location") {
+  if (window.location.hash == "#/current-location") {
     currentLocationBtn.setAttribute("disabled", "");
   } else {
     currentLocationBtn.removeAttribute("disabled");
@@ -146,27 +146,29 @@ export const updateWeather = function (lat, lon) {
 
     card.innerHTML = `
     <h2 class="title-2 card-title">Now</h2>
-    <div class="wrapper">
-      <p class="heading">${parseInt(temp)}&deg;<sup>c</sup></p>
-      <img
-        src="./assets/images/weather_icons/${icon}.png"
-        width="64"
-        height="64"
-        alt="${description}"
-        class="weather-icon"
-      />
-    </div>
-    <p class="body-3">${description}</p>
-    <ul class="meta-list">
-      <li class="meta-item">
-        <span class="m-icon">calendar_today</span>
-        <p class="title-3 meta-text">${module.getDate(dateUnix, timezone)}</p>
-      </li>
-      <li class="meta-item">
-        <span class="m-icon">location_on</span>
-        <p class="title-3 meta-text" data-location></p>
-      </li>
-    </ul>
+        <div class="wrapper">
+                <p class="heading">${parseInt(temp)}&deg;<sup>c</sup></p>
+                <img
+                  src="./assets/images/weather_icons/${icon}.png"
+                  width="64"
+                  height="64"
+                  alt="${description}"
+                  class="weather-icon"
+                />
+        </div>
+              <p class="body-3">${description}</p>
+              <ul class="meta-list">
+                <li class="meta-item">
+                  <span class="m-icon">calendar_today</span>
+                  <p class="title-3 meta-text">
+                    ${module.getDate(dateUnix, timezone)}
+                  </p>
+                </li>
+                <li class="meta-item">
+                  <span class="m-icon">location_on</span>
+                  <p class="title-3 meta-text" data-location></p>
+                </li>
+              </ul>
     `;
 
     fetchData(url.reverseGeo(lat, lon), function ([{ name, country }]) {

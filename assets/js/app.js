@@ -5,7 +5,7 @@
 
 "use strict";
 
-import { fetchData, url} from "./api.js";
+import { fetchData, url } from "./api.js";
 import * as module from "./module.js";
 
 /**
@@ -86,3 +86,44 @@ searchField.addEventListener("input", function () {
     }, searchTimeoutDuration);
   }
 });
+
+const container = document.querySelector("[data-container]");
+const loading = document.querySelector("[data-loading]");
+const currentLocationBtn = document.querySelector(
+  "[data-current-location-btn]"
+);
+const errorContent = document.querySelector("[data-error-content]");
+
+/**
+ * Render all weather data in html page
+ * @param {number} lat latitude
+ * @param {number} lon longitude
+ */
+export const updateWeather = function (lat, lon) {
+  loading.style.display = "grid";
+  container.style.overflowY = "hidden";
+  container.classList.contains("fade-in") ??
+    container.classList.remove("fade-in");
+  errorContent.style.display = "none";
+
+  const currentWeatherSection = document.querySelector(
+    "[data-current-weather]"
+  );
+  const highlightSection = document.querySelector("[data-highlights]");
+  const hourlySection = document.querySelector("[data-hourly-forecast]");
+  const forecastSection = document.querySelector("[data-5-day-forecast]");
+
+  currentWeatherSection.innerHTML;
+  highlightSection.innerHTML;
+  hourlySection.innerHTML;
+  forecastSection.innerHTML;
+
+  if (window.location.hash === "#/current-location") {
+    currentLocationBtn.setAttribute("disabled", "");
+  } else {
+    currentLocationBtn.removeAttribute("disabled");
+  }
+};
+
+// CURRENT WEATHER SECTION
+

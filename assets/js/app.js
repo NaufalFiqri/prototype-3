@@ -106,11 +106,6 @@ const errorContent = document.querySelector("[data-error-content]");
  */
 
 export const updateWeather = function (lat, lon) {
-//   loading.style.display = "grid";
-  container.style.overflowY = "hidden";
-  container.classList.remove("fade-in");
-  errorContent.style.display = "none";
-
   const currentWeatherSection = document.querySelector(
     "[data-current-weather]"
   );
@@ -145,7 +140,7 @@ export const updateWeather = function (lat, lon) {
     const [{ description, icon }] = weather;
 
     const card = document.createElement("div");
-    card.classList.add("add", "card-lg", "current-weather-card");
+    card.classList.add("card", "card-lg", "current-weather-card");
 
     card.innerHTML = `
       <h2 class="title-2 card-title">Now</h2>
@@ -409,9 +404,50 @@ export const updateWeather = function (lat, lon) {
         <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
 
         <div class="card card-lg forecast-card">
-          <ul data-forecast-list></ul>
+          <ul>
+          <li class="card-item">
+          <div class="icon-wrapper">
+            <img
+              src="./assets/images/weather_icons/01n.png"
+              width="36"
+              height="36"
+              alt="Overcast Clouds"
+              class="weather-icon"
+              title="Overcast Clouds"
+            />
+
+            <span class="span">
+              <p class="title-2">25&deg;</p>
+            </span>
+          </div>
+          <p class="label-1">
+            17 Feb
+          </p>
+
+          <p class="label-1">Friday</p>
+        </li>
+          </ul>
         </div>
       `;
+
+      for (let i = 7, len = forecastList.length; i < len; i += 8) {
+        const {
+          main: { temp_max },
+          weather,
+          dt_txt,
+        } = forecastList[i];
+        const [{ icon, description }] = weather;
+        const date = new Date(dt_txt);
+
+        const li = document.createElement("li");
+        li.classList.add("card-item");
+
+        
+      }
+
+      loading.style.display = "none";
+      container.style.overflowY = "overlay";
+      container.classList.add("fade-in");
     });
   });
 };

@@ -32,7 +32,7 @@
             alt="logo"
           />
         </a>
-        <div class="search-view active" data-search-view>
+        <div class="search-view" data-search-view>
           <div class="search-wrapper">
             <input
               type="search"
@@ -51,18 +51,7 @@
               <span class="m-icon">arrow_back</span>
             </button>
           </div>
-          <div class="search-result" data-search-result>
-            <ul class="view-list" data-search-list>
-              <li class="view-item">
-                <span class="m-icon">location_on</span>
-                <div>
-                  <p class="item-title">London</p>
-                  <p class="label-2 item-subtitle">State of London, GB</p>
-                </div>
-                <a href="#" class="item-link has-state" data-search-toggler></a>
-              </li>
-            </ul>
-          </div>
+          <div class="search-result" data-search-result></div>
         </div>
 
         <div class="header-actions">
@@ -73,7 +62,11 @@
           >
             <span class="m-icon icon">search</span>
           </button>
-          <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
+          <a
+            href="#/current-location"
+            class="btn-primary has-state"
+            data-current-location-btn
+          >
             <span class="m-icon">my_location</span>
             <span class="span">Current Location</span>
           </a>

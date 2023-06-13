@@ -105,7 +105,7 @@ const errorContent = document.querySelector("[data-error-content]");
  * @param {number} lon longitude
  */
 export const updateWeather = function (lat, lon) {
-    loading.style.display = "grid";
+  loading.style.display = "grid";
   container.style.overflowY = "hidden";
   container.classList.contains("fade-in") ??
     container.classList.remove("fade-in");
@@ -118,10 +118,10 @@ export const updateWeather = function (lat, lon) {
   const hourlySection = document.querySelector("[data-hourly-forecast]");
   const forecastSection = document.querySelector("[data-5-day-forecast]");
 
-  currentWeatherSection.innerHTML;
-  highlightSection.innerHTML;
-  hourlySection.innerHTML;
-  forecastSection.innerHTML;
+  currentWeatherSection.innerHTML = "";
+  highlightSection.innerHTML = "";
+  hourlySection.innerHTML = "";
+  forecastSection.innerHTML = "";
 
   if (window.location.hash === "#/current-location") {
     currentLocationBtn.setAttribute("disabled", "");

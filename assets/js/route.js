@@ -7,7 +7,7 @@
 "use strict";
 
 import { updateWeather, error404 } from "./app.js";
-const defaultLocation = "#/weather?lat=2.9474&lon=101.8451"; // Semenyih
+const defaultLocation = "#/weather?lat=2.3138&lon=102.3211"; // UTeM
 
 const currentLocation = function () {
   window.navigator.geolocation.getCurrentPosition(
